@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body onresize="resize()">
+    <div id="loser">
+      <img src="images/lose.png" alt="" />
+      <button type="button" onclick="start()">Restart</button>
+    </div>
+    <div id="winner">
+      <img src="images/victory.png" alt="" />
+      <button type="button" onclick="start()">Restart</button>
+    </div>
+    <h1 id="left">Bubble</h1>
+    <h1 id="right">Burst</h1>
+    <img src="images/nerd.png" alt="" id="muted" onclick="muted()" />
+    <img src="images/start.png" alt="" id="start" onclick="rules()" />
+    <div id="points">Points : 0</div>
+    <div id="top"></div>
+    <div id="container">
+      <div id="scene">
+        <img src="images/back-1.png" class="layer" data-depth="0.2" alt="" />
+      </div>
+      <img src="images/crab.gif" alt="" class="crab" />
+      <div id="fishes">
+        <img src="images/circle-fish.gif" class="circle-fish0" alt="" />
+        <img src="images/circle-fish.gif" class="circle-fish1" alt="" />
+        <img src="images/down.gif" class="down0 cuddle" alt="" />
+        <img src="images/down.gif" class="down1 cuddle" alt="" />
+        <img src="images/down.gif" class="up0 cuddle" alt="" />
+        <img src="images/down.gif" class="up1 cuddle" alt="" />
+        <img src="images/fish-0.gif" class="fish0 cuddle" alt="" />
+        <img src="images/fish-0.gif" class="fish1 cuddle" alt="" />
+        <img src="images/fish-0.gif" class="fish2 cuddle" alt="" />
+        <img src="images/fish-1.gif" class="fish3 cuddle" alt="" />
+        <img src="images/fish-1.gif" class="fish5 cuddle" alt="" />
+        <img src="images/fish-2.gif" class="fish6 cuddle" alt="" />
+        <img src="images/fish-2.gif" class="fish7 cuddle" alt="" />
+        <img src="images/shark.gif" class="shark" alt="" />
+      </div>
+    </div>
+    <div id="bubbles"></div>
+    <div id="rules">
+      <h1>Rules:</h1>
+      <p>1. One missed bubble is -1 point</p>
+      <p>2. One bursted bubble is +1 point</p>
+      <p>3. Collect 150 point and you are winner</p>
+      <p>4. If the points are under 0 you lose</p>
+      <p>Tip<sup>* </sup> If you lose do not be afraid !</p>
+      <button type="button" onclick="start()">Start</button>
+    </div>
+
+    <audio src="sounds/mix.mp3" id="back" loop muted="true"></audio>
+    <audio src="sounds/victory.mp3" id="victory" muted="true"></audio>
+    <audio src="sounds/lose.mp3" id="lose" muted="true"></audio>
+    <audio src="sounds/pop-0.mp3" id="pop-0" muted="true"></audio>
+    <audio src="sounds/pop-1.mp3" id="pop-1" muted="true"></audio>
+    <audio src="sounds/pop-2.mp3" id="pop-2" muted="true"></audio>
+
+    <script src="js/index.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script>
+      let scene = document.getElementById("scene");
+      let parallaxInstance = new Parallax(scene);
+    </script>
+  </body>
+</html>
